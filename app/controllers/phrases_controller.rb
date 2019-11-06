@@ -1,5 +1,6 @@
 class PhrasesController < ApplicationController
     def show
+        @phrase = Phrase.find(params[:id])
     end
 
     def index

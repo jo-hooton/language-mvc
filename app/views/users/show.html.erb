@@ -1,0 +1,17 @@
+<h1><%= @user.name %></h1>
+<img src="<%= @user.image %>" style="width: 400px; height: auto">
+<h3><%= @user.name %>'s Languages</h3>
+<ul>
+    <% @user.languages.each do |language| %>
+        <li><%= language.name %></li>
+    <% end %>
+</ul>
+<h3><%= @user.name %>'s Phrases</h3>
+<ul>
+<% @user.phrases.each do |phrase| %>
+    <li>
+    <p>English: <%= phrase.english_text %></p>
+    <p><%= phrase.language.name %>: <%= phrase.language_text %></p>
+    </li>
+<% end %>
+</ul>

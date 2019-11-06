@@ -7,9 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-20.times do
+50.times do
     User.create(
-        name: Faker::Name
+        name: Faker::Creature::Cat.name,
         image: 'https://instagram.flhr3-1.fna.fbcdn.net/vp/f07e6577ddc0a362615725e2bd17352e/5E63250A/t51.2885-15/sh0.08/e35/s750x750/73381103_2560495177529711_3296448135674134194_n.jpg?_nc_ht=instagram.flhr3-1.fna.fbcdn.net&_nc_cat=111'
     )
 end
+
+100.times do 
+    Language.create(
+        name: Faker::Nation.language
+    )
+end
+
+200.times do
+    Phrase.create(
+        english_text: Faker::String.random(length: 3..12),
+        language_text: Faker::String.random(length: 3..12),
+        user_id: rand(1..50),
+        language_id: rand(1..100)
+    )
+    
+end
+
